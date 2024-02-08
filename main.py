@@ -40,7 +40,7 @@ def main():
     # Simula los partidos y actualiza los puntos
     for partido in partidos: 
         # Pide el marcador para el partido
-        marcador = input(f"Ingrese el marcador para {partido.equipo1.nombre} vs {partido.equipo2.nombre} (en el formato 'marcador_equipo1-marcador_equipo2'): ")
+        marcador = input(f"Ingrese el marcador para {partido.equipo1.nombre} vs {partido.equipo2.nombre} (separador por un -'): ")
         marcador_equipo1, marcador_equipo2 = map(int, marcador.split('-'))
 
         # Actualiza los puntos según el marcador
@@ -68,10 +68,10 @@ def main():
     partido_final_2 = Partido(cuadrangular_2_top[0], cuadrangular_2_top[1])
 
     # Simular los partidos de la final 1
-    marcador_final_1 = input(f"Ingrese el marcador para la final 1 entre {partido_final_1.equipo1.nombre} vs {partido_final_1.equipo2.nombre} (en el formato 'marcador_equipo1-marcador_equipo2'): ")
+    marcador_final_1 = input(f"Ingrese el marcador para la final 1 entre {partido_final_1.equipo1.nombre} vs {partido_final_1.equipo2.nombre} (separador por un -'): ")
     marcador_final_1_equipo1, marcador_final_1_equipo2 = map(int, marcador_final_1.split('-'))
 
-    marcador_final_2 = input(f"Ingrese el marcador para la final 2 entre {partido_final_2.equipo1.nombre} vs {partido_final_2.equipo2.nombre} (en el formato 'marcador_equipo1-marcador_equipo2'): ")
+    marcador_final_2 = input(f"Ingrese el marcador para la final 2 entre {partido_final_2.equipo1.nombre} vs {partido_final_2.equipo2.nombre} (separador por un -'): ")
     marcador_final_2_equipo1, marcador_final_2_equipo2 = map(int, marcador_final_2.split('-'))
 
     # Actualizar los puntos de los equipos según los marcadores de la final
@@ -103,7 +103,7 @@ def main():
     partido_final = Partido(cuadrangular_1_top[0], cuadrangular_2_top[0])
     
     # Simular los partidos de la final
-    marcador_final = input(f"Ingrese el marcador para la final entre {partido_final.equipo1.nombre} vs {partido_final.equipo2.nombre} (en el formato 'marcador_equipo1-marcador_equipo2'): ")
+    marcador_final = input(f"Ingrese el marcador para la final entre {partido_final.equipo1.nombre} vs {partido_final.equipo2.nombre} (separador por un -''): ")
     marcador_final_equipo1, marcador_final_equipo2 = map(int, marcador_final.split('-'))
 
     # Actualizar los puntos de los equipos según los marcadores de la final
