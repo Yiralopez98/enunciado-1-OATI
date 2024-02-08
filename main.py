@@ -1,8 +1,9 @@
 from equipo import Equipo
 from partido import Partido
 from utilidades import mostrar_tabla_posiciones_cuadrangular, mostrar_cuadrangulares, mostrar_tabla_posiciones
-
+from db import EquipoDB
 def main():
+    equipos_db = EquipoDB()
     equipos = []
     partidos = []
 
@@ -17,7 +18,14 @@ def main():
     cuadrangular_1 = equipos[:4]
     cuadrangular_2 = equipos[4:]
 
-    # Muestra los cuadrangulares
+    equipos = equipos_db.obtener_equipos()
+    equipos_db.crear_equipo("Nuevo Equipo")
+    equipos_nuevos = equipos_db.obtener_equipos()
+    print("Equipos después de agregar uno nuevo:")
+    for equipo in equipos_nuevos:
+        print(equipo.nombre)
+
+        # Muestra los cuadrangulares
     mostrar_cuadrangulares(cuadrangular_1, cuadrangular_2)
 
     # Registra los partidos para cada cuadrangular
@@ -116,6 +124,7 @@ def main():
         cuadrangular_2_top[0].puntos_cuadrangular_1 += 1
     
     mostrar_tabla_posiciones(cuadrangular_1, cuadrangular_2)
-
+    equipos_db.cerrar_conexion()    
+    
 if __name__ == "__main__":
     main()
