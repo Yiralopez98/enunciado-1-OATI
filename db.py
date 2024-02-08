@@ -5,7 +5,7 @@ class EquipoDB:
         self.connection = mysql.connector.connect(
             host="localhost",
             user="root",
-            password="",
+            password=" ",
             database="cuadrangular"
         )
         self.cursor = self.connection.cursor()
